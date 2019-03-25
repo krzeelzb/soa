@@ -3,4 +3,41 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <display-name>AgeFilterWelcome</display-name>
+    <welcome-file-list>
+        <welcome-file>age.html</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name>AgeFilter</filter-name>
+        <filter-class>ex2.filters.AgeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AgeFilter</filter-name>
+        <url-pattern>/ex2*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <display-name>LoginFilterWelcome</display-name>
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+    <filter>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <filter-class>ex3.filters.RequestLoggingFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>ex3.filters.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <url-pattern>/ex3*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/ex3*</url-pattern>
+    </filter-mapping>
 </web-app>
