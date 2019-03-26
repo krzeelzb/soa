@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<h:outputScript library="javax.faces" name="jsf.js" target="head" />
+    <f:metadata>
+        <f:viewAction action="#{book.generateDefaultValues}" />
+    </f:metadata>
+</h:head>
+<h:body>
+
+
+    <!--<f:metadata>-->
+        <!--<f:viewAction action="#{myController.onPageLoad}" />-->
+    <!--</f:metadata>-->
+    <h:form>
+        <h:panelGrid columns="1">
+            Gender:
+            <h:selectOneRadio id="genderSelect" value="#{user.gender}" required="true">
+                <f:selectItem itemValue="m" itemLabel="male"/>
+                <f:selectItem itemValue="f" itemLabel="female"/>
+                <f:ajax event="change" execute="genderSelect" render="@form" />
+            </h:selectOneRadio>
+            Name:
+            <h:inputText id="nameInput" value="#{user.name}" required="true" immediate="true"/>
+            e-mail:
+            <h:inputText id="emailInput" value="#{user.email}" required="true" immediate="true"/>
+            Age:
+            <h:inputText id="ageInput" value="#{user.age}">
+                <f:validateLongRange maximum="100" minimum="10"/>
+            </h:inputText>
+            Education:
+            <h:selectOneRadio id="educationSelect" value="#{user.education}">
+                <f:selectItem itemValue="primary" itemLabel="primary"/>
+                <f:selectItem itemValue="higher" itemLabel="higher"/>
+                <f:selectItem itemValue="student" itemLabel="student"/>
+            </h:selectOneRadio>
+            Height:
+            <h:inputText id="heightInput" value="#{user.height}" immediate="true">
+                <f:validateLongRange minimum="150" maximum="185" disabled="#{user.getGender().equals('m')}"/>
+                <f:validateLongRange minimum="165" maximum="200" disabled="#{user.getGender().equals('f')}"/>
+            </h:inputText>
+            <h:outputText value="Breast:" rendered="#{user.gender.equals('f')}" />
+            <h:inputText id="breastInput" value="#{user.breast}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="Bra:" rendered="#{user.gender.equals('f')}" />
+            <h:inputText id="braInput" value="#{user.bra}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="waistline:" rendered="#{user.gender.equals('f')}" />
+            <h:inputText id="waistlineInput" value="#{user.waistline}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="hips:" rendered="#{user.gender.equals('f')}" />
+            <h:inputText id="hipsInput" value="#{user.hips}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="chest:" rendered="#{user.gender.equals('m')}" />
+            <h:inputText id="chestInput" value="#{user.chest}" rendered="#{user.gender.equals('m')}"/>
+            <h:outputText value="midsection:" rendered="#{user.gender.equals('m')}" />
+            <h:inputText id="midsectionInput" value="#{user.midsection}" rendered="#{user.gender.equals('m')}"/>
+        </h:panelGrid>
+        <h:commandButton id="submitBlank" value="Send" type="submit" action="extraQuestions"/>
+
+    </h:form>
+
+</h:body>
+
+</html>
