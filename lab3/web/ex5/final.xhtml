@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head><title>Zadanie 4</title></h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            Imie:
+            <h:outputText value="#{user.name}"/>
+            Mail:
+            <h:outputText value="#{user.email}"/>
+            Wiek:
+            <h:outputText value="#{user.age}"/>
+            Plec:
+            <h:outputText value="male" rendered="#{user.gender.equals('m')}"/>
+            <h:outputText value="female" rendered="#{user.gender.equals('f')}"/>
+            Wyksztalcenie:
+            <h:outputText value="#{user.education}"/>
+            Wzrost:
+            <h:outputText value="#{user.height}"/>
+            <h:outputText value="breat" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="#{user.breast}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="bra" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="#{user.bra}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="waistline" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="#{user.waistline}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="hips" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="#{user.hips}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="cheast" rendered="#{user.gender.equals('m')}"/>
+            <h:outputText value="#{user.chest}" rendered="#{user.gender.equals('m')}"/>
+            <h:outputText value="middleline" rendered="#{user.gender.equals('m')}"/>
+            <h:outputText value="#{user.midsection}" rendered="#{user.gender.equals('m')}"/>
+            How much u can spend on clothes?
+            <h:outputText value="#{user.monthlyMoney}"/>
+            How often do u buy things?
+            <h:outputText value="#{user.howOften}"/>
+            Prefered color?:
+            <h:outputText value="#{user.preferedColor}"/>
+            What is ypur favourite type of clothes?:
+            <h:outputText value="#{user.typeClothes}" rendered="#{user.gender.equals('f')}"/>
+            <h:outputText value="#{user.typeClothes}" rendered="#{user.gender.equals('m')}"/>
+            <h:graphicImage value="https://picsum.photos/#{user.imageId}" cacheable="false" />
+
+
+        </h:panelGrid>
+    </h:form>
+    <h:form>
+    <h:commandButton id="clickPhoto" value="https://picsum.photos/#{user.imageId}" action="#{user.incrementClick}" update="outputClick"/>
+    Clicks:<h:outputText id="outputClick" value="#{user.numberOfClicks}"/>
+    </h:form>
+</h:body>
+</html>
