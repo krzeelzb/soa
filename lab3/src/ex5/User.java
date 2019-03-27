@@ -2,6 +2,9 @@ package ex5;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 
 @SessionScoped
@@ -19,11 +22,74 @@ public class User {
     private String bra;
     private String waistline;
     private String hips;
-
     //for men
     private String chest;
     private String midsection ;
+    //additional questions
+    private String monthlyMoney;
+    private String howOften;
+    private String preferedColor;
 
+    private Integer numberOfClicks=0;
+    private List<String> typeClothes;
+    private List<String> typeClothesFeMale=new LinkedList<String>(Arrays.asList("sukienka","spódniczka"));
+
+    private List<String> typeClothesMale=new LinkedList<>(Arrays.asList("spodnie","garnitur","krawat"));
+    public void setNumberOfClicks(Integer numberOfClicks) {
+        this.numberOfClicks = numberOfClicks;
+    }
+
+    public Integer getNumberOfClicks() {
+        return numberOfClicks;
+    }
+
+    public List<String> getTypeClothes() {
+        return typeClothes;
+    }
+
+    public List<String> getTypeClothesMale() {
+        return typeClothesMale;
+    }
+
+    public void setTypeClothes(List<String> typeClothes) {
+        this.typeClothes = typeClothes;
+    }
+
+    public void setTypeClothesMale(List<String> typeClothesMale) {
+        this.typeClothesMale = typeClothesMale;
+    }
+
+    public void setTypeClothesFeMale(List<String> typeClothesFeMale) {
+        this.typeClothesFeMale = typeClothesFeMale;
+    }
+
+    public List<String> getTypeClothesFeMale() {
+        return typeClothesFeMale;
+    }
+
+    public void setMonthlyMoney(String monthlyMoney) {
+        this.monthlyMoney = monthlyMoney;
+    }
+
+    public void setHowOften(String howOften) {
+        this.howOften = howOften;
+    }
+
+    public void setPreferedColor(String preferedColor) {
+        this.preferedColor = preferedColor;
+    }
+
+    public String getMonthlyMoney() {
+        return monthlyMoney;
+    }
+
+    public String getHowOften() {
+        return howOften;
+    }
+
+    public String getPreferedColor() {
+        return preferedColor;
+    }
 
     public String getName() {
         return name;
@@ -73,8 +139,6 @@ public class User {
         return midsection;
     }
 
-
-
     public void setName(String name) {
         this.name = name;
     }
@@ -122,8 +186,14 @@ public class User {
     public void setMidsection(String midsection) {
         this.midsection = midsection;
     }
+    public String getImageId () {
+        String imageId = "";
+        int nb = (int)(Math.random()* ((400 - 100)+400));
+        imageId = Integer.toString(nb);
+        return imageId;
+    }
 
-
-
-
+    public void incrementClick(){
+        this.numberOfClicks++;
+    }
 }
