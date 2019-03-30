@@ -7,9 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 <h:outputScript library="javax.faces" name="jsf.js" target="head" />
-    <f:metadata>
-        <f:viewAction action="#{book.generateDefaultValues}" />
-    </f:metadata>
+
 </h:head>
 <h:body>
 
@@ -23,7 +21,7 @@
             <h:selectOneRadio id="genderSelect" value="#{user.gender}" required="true">
                 <f:selectItem itemValue="m" itemLabel="male"/>
                 <f:selectItem itemValue="f" itemLabel="female"/>
-                <f:ajax event="change" execute="genderSelect" render="@form" />
+                <f:ajax event="change" execute="genderSelect" render="@form"  listener="#{user.validate()}"/>
             </h:selectOneRadio>
             Name:
             <h:inputText id="nameInput" value="#{user.name}" required="true" immediate="true"/>

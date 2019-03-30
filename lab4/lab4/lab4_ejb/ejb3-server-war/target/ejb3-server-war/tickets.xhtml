@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+>
+<head>
+    <title>Tickets</title>
+    <h:outputScript library="javax.faces" name="jsf.js" target="head" />
+</head>
+<body>
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputText value='Enter seatId'/>
+        <h:inputText id="inputxt" value='#{ticketView.chosenSeat}'/>
+        <h:commandButton action="#{ticketView.reserveSeat()}" value="Add" >
+
+
+            <f:ajax execute="inptxt" render="outtxt2 outtxt3"></f:ajax>
+        </h:commandButton>
+    </h:panelGrid>
+</h:form>
+
+<p:dataTable id="seatsTable" value="#{ticketView.getSeats()}" var="seat"  >
+
+    <p:column  >
+        <f:facet name="header">ID</f:facet>
+        #{seat.id}
+    </p:column>
+    <p:column  >
+        <f:facet name="header">Price</f:facet>
+        #{seat.price}
+    </p:column>
+
+    <p:column >
+        <f:facet name="header">Reserved</f:facet>
+
+        <h:outputLabel id="outtxt3" value="#{seat.reserved}"> </h:outputLabel><br/><br/>
+    </p:column>
+
+</p:dataTable>
+Money left:
+<h:outputLabel id="outtxt" value="#{ticketView.moneyLeft()}"> </h:outputLabel><br/><br/>
+Seats Left:
+
+<h:outputLabel id="outtxt2" value="#{ticketView.getSeats().size()}"> </h:outputLabel><br/><br/>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+<head>
+    <title>Final</title>
+</head>
+<body>
+<h:form id="results">
+    <p:dataTable id="seatsTable" value="#{ticketView.getSeats()}" var="seat"  >
+
+        <p:column  >
+            <f:facet name="header">ID</f:facet>
+            #{seat.id}
+        </p:column>
+        <p:column  >
+            <f:facet name="header">Price</f:facet>
+            #{seat.price}
+        </p:column>
+
+        <p:column >
+            <f:facet name="header">Reserved</f:facet>
+            #{seat.reserved}
+        </p:column>
+        <p:column >
+            <f:facet name="header">Want to reserve it?</f:facet>
+            <h:selectBooleanCheckbox value="#{seat.chooseReserve}" />
+
+        </p:column>
+        <p:commandButton id="submitButton" value="Ready" type="submit" action="final"/>
+
+    </p:dataTable>
+</h:form>
+</body>
+</html>

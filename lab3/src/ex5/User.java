@@ -17,15 +17,12 @@ public class User {
     private String gender;
     private String education;
     private Integer height;
-    //for women
     private String breast;
     private String bra;
     private String waistline;
     private String hips;
-    //for men
     private String chest;
     private String midsection ;
-    //additional questions
     private String monthlyMoney;
     private String howOften;
     private String preferedColor;
@@ -37,6 +34,25 @@ public class User {
     private List<String> typeClothesMale=new LinkedList<>(Arrays.asList("spodnie","garnitur","krawat"));
     public void setNumberOfClicks(Integer numberOfClicks) {
         this.numberOfClicks = numberOfClicks;
+    }
+
+    public String getImageId () {
+        String imageId = "";
+        int nb = (int)(Math.random()* ((400 - 100)+400));
+        imageId = Integer.toString(nb);
+        return imageId;
+    }
+
+    public void incrementClick(){
+        this.numberOfClicks++;
+    }
+    public boolean validate() {
+        return this.name != null
+                && this.email != null
+                && this.age != null
+                && this.gender != null
+                && this.education != null
+                && this.height != null;
     }
 
     public Integer getNumberOfClicks() {
@@ -186,14 +202,5 @@ public class User {
     public void setMidsection(String midsection) {
         this.midsection = midsection;
     }
-    public String getImageId () {
-        String imageId = "";
-        int nb = (int)(Math.random()* ((400 - 100)+400));
-        imageId = Integer.toString(nb);
-        return imageId;
-    }
 
-    public void incrementClick(){
-        this.numberOfClicks++;
-    }
 }
