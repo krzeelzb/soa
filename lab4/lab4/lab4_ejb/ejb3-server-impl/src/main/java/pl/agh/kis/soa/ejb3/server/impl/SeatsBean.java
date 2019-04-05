@@ -1,11 +1,9 @@
 package pl.agh.kis.soa.ejb3.server.impl;
 
-import javax.annotation.PostConstruct;
+import javax.ejb.Lock;
+import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +13,7 @@ import java.util.List;
 public class SeatsBean {
     private Seats seats = new Seats();
 
+    @Lock(LockType.READ)
     public List<Seat> getSeatList() {
         List<Seat> seatsUnreserved = new ArrayList<>();
         for (Seat seat : seats.getSeats()) {
@@ -31,6 +30,7 @@ public class SeatsBean {
         return seat.getPrice();
     }
 
+    @Lock(LockType.WRITE)
     public void buyTicket(String id) throws IllegalAccessException {
         Seat seat = seats.getSeatById(id,seats.getSeats());
 

@@ -23,31 +23,34 @@
 
             <f:ajax execute="inptxt" render="outtxt2 outtxt3"></f:ajax>
         </h:commandButton>
+        <h:messages />
     </h:panelGrid>
+
 </h:form>
 
-<p:dataTable id="seatsTable" value="#{ticketView.getSeats()}" var="seat"  >
+<h:dataTable id="seatsTable" value="#{ticketView.getSeats()}" var="seat"  >
 
-    <p:column  >
+    <h:column  >
         <f:facet name="header">ID</f:facet>
         #{seat.id}
-    </p:column>
-    <p:column  >
+    </h:column>
+    <h:column  >
         <f:facet name="header">Price</f:facet>
         #{seat.price}
-    </p:column>
+    </h:column>
 
-    <p:column >
+    <h:column >
         <f:facet name="header">Reserved</f:facet>
 
         <h:outputLabel id="outtxt3" value="#{seat.reserved}"> </h:outputLabel><br/><br/>
-    </p:column>
+    </h:column>
 
-</p:dataTable>
+</h:dataTable>
+
 Money left:
 <h:outputLabel id="outtxt" value="#{ticketView.moneyLeft()}"> </h:outputLabel><br/><br/>
-Seats Left:
+<!--Seats Left:-->
 
-<h:outputLabel id="outtxt2" value="#{ticketView.getSeats().size()}"> </h:outputLabel><br/><br/>
+<!--<h:outputLabel id="outtxt2" value="#{ticketView.getSeats().size()}"> </h:outputLabel><br/><br/>-->
 </body>
 </html>

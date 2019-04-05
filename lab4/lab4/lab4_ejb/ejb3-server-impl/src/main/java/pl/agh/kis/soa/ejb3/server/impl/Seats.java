@@ -15,8 +15,10 @@ public class Seats {
             new Seat("6", 40, false, false),
             new Seat("7", 550, false, false)
     ));
+
     public Seats() {
     }
+
 
     public boolean addSeat(Seat seat){ return seats.add(seat);};
     public List<Seat> getSeats(){return seats;};

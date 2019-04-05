@@ -7,57 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fba87281-e0ff-47fa-9774-854e3eeedf3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ex4/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/libraries/javax_faces_2_1_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/libraries/jaxb_api_2_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/Seat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/Seats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/SeatsBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/UserBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-war/src/main/java/pl/agh/kis/soa/TicketView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-war/src/main/webapp/example.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-war/src/main/webapp/final.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_example/ejb3-server-war/src/main/webapp/tickets.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/lab4Servlet_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/server_impl_ejb.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/server_impl_ejb_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/server_impl_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/server_war_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/artifacts/server_war_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__groupId_lab4Servlet_ejb_client_client_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__groupId_server_impl_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__javax_ejb_javax_ejb_api_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__javax_faces_javax_faces_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__javax_javaee_api_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/libraries/Maven__org_primefaces_primefaces_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/lab4Servlet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-impl/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-impl/server-impl.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-impl/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-war/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-war/server-war.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/server-war/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4Servlet/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex4/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex4/BookBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ex5/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ex5/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ex4/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/ex4/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ex5/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/ex5/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/lab4/lab4_ejb/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/SeatsBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/lab4/lab4_ejb/ejb3-server-impl/src/main/java/pl/agh/kis/soa/ejb3/server/impl/SeatsBean.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,7 +60,7 @@
     <session id="1050164486">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -170,7 +122,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ex4/BookBean.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-255">
+                <state relative-caret-position="510">
                   <caret line="34" column="52" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -396,7 +348,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="959" />
     <option name="height" value="1052" />
   </component>
@@ -477,7 +429,7 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553949414257" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553950430747" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -602,7 +554,7 @@
     <option name="totallyTimeSpent" value="40519000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1053" extended-state="7" />
+    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113127" />

@@ -10,9 +10,7 @@ public class UserBean {
     public int getMoney() {
         return money;
     }
-    private String seatId;
     private int money;
-    private List<Seat> reservedSeats=new ArrayList<>();
 
     SeatsBean seatsBean=new SeatsBean();
 

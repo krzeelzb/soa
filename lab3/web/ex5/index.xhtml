@@ -42,8 +42,10 @@
                 <f:validateLongRange minimum="150" maximum="185" disabled="#{user.getGender().equals('m')}"/>
                 <f:validateLongRange minimum="165" maximum="200" disabled="#{user.getGender().equals('f')}"/>
             </h:inputText>
+
             <h:outputText value="Breast:" rendered="#{user.gender.equals('f')}" />
             <h:inputText id="breastInput" value="#{user.breast}" rendered="#{user.gender.equals('f')}"/>
+
             <h:outputText value="Bra:" rendered="#{user.gender.equals('f')}" />
             <h:inputText id="braInput" value="#{user.bra}" rendered="#{user.gender.equals('f')}"/>
             <h:outputText value="waistline:" rendered="#{user.gender.equals('f')}" />

@@ -5,6 +5,8 @@ import pl.agh.kis.soa.ejb3.server.impl.Seats;
 import pl.agh.kis.soa.ejb3.server.impl.SeatsBean;
 import pl.agh.kis.soa.ejb3.server.impl.UserBean;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -23,9 +25,13 @@ public class TicketView implements Serializable {
     }
     public int moneyLeft(){ return userBean.getMoney();}
     public void reserveSeat() throws IllegalAccessException {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
         try {
+
             userBean.reserveTicket(chosenSeat);
         } catch (IllegalAccessException e) {
+            FacesMessage facesMessage = new FacesMessage(e.getMessage());
+            facesContext.addMessage(null, facesMessage);
         }
     }
 
