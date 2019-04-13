@@ -6,6 +6,9 @@ import Entities.BookLibrary;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class AuthorDBO {
@@ -15,7 +18,13 @@ public class AuthorDBO {
     private static EntityTransaction transactionObj = entityMgrObj.getTransaction();
 
     public static List getAllDetails() {
-        Query queryObj = entityMgrObj.createQuery("SELECT s FROM Author s");
+        CriteriaQuery<Author> query=entityMgrObj.getCriteriaBuilder().createQuery(Author.class);
+
+        Root <Author> authors= query.from(Author.class);
+        query.select(authors);
+
+        TypedQuery<Author> queryObj= entityMgrObj.createQuery(query);
+//        Query queryObj = entityMgrObj.createQuery("SELECT s FROM Author s");
         List bookList = queryObj.getResultList();
         if (bookList != null && bookList.size() > 0) {
             return bookList;

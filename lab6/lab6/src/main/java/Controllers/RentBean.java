@@ -1,12 +1,10 @@
-package controller;
+package Controllers;
 
 import DatabaseOperations.RentDBO;
 import Entities.BookLibrary;
 import Entities.Reader;
-import Entities.Rent;
 
 import javax.faces.bean.ManagedBean;
-import java.util.LinkedList;
 import java.util.List;
 
 @ManagedBean(name = "rent")
