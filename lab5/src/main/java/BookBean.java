@@ -157,12 +157,10 @@ public class BookBean {
 
 
     public Boolean getAddBtn() {
-        System.out.println(addBtn);
         return addBtn;
     }
 
     public void setAddBtn(Boolean addBtn) {
-        System.out.println(addBtn);
         this.addBtn = addBtn;
     }
 
