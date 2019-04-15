@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93f87d07-aa90-44f5-94b5-5bce89d8a7e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab6/lab6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6/lab6/src/main/java/DatabaseOperations/AuthorDBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/src/main/java/DatabaseOperations/AuthorDBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6/lab6/src/main/java/controller/AuthorBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/src/main/java/Controllers/AuthorBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6/lab6/src/main/java/controller/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/src/main/java/Controllers/BookBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6/lab6/src/main/java/controller/ReaderBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/src/main/java/Controllers/ReaderBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6/lab6/src/main/java/controller/RentBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/lab6/src/main/java/Controllers/RentBean.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,7 +35,7 @@
     <session id="657137478">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="1" />
@@ -277,7 +271,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
     <option name="y" value="2" />
     <option name="width" value="1910" />
@@ -359,7 +353,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555194349908" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab6/lab6" />
+    <property name="last_opened_file_path" value="$USER_HOME$/qwise/assistant" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -488,16 +482,15 @@
       <workItem from="1554989938859" duration="27000" />
       <workItem from="1555173447541" duration="6401000" />
       <workItem from="1555180205621" duration="2475000" />
-      <workItem from="1555194518944" duration="592000" />
+      <workItem from="1555194518944" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16232000" />
+    <option name="totallyTimeSpent" value="16249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-1" width="1920" height="1080" extended-state="7" />
-    <editor active="true" />
+    <frame x="1920" y="-1" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.834555" visible="true" weight="0.21184632" />
       <window_info id="Persistence" order="1" side_tool="true" />

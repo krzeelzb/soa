@@ -1,183 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
 >
-
-
 <h:head>
-
 </h:head>
-
 <h:body>
-   <div class="grid-container">
-       <h:panelGrid columns="1">
-<h1>LIBRARY</h1>
+    <div class="grid-container">
+        <h:panelGrid columns="1">
+            <h1>LIBRARY</h1>
 
-           <h:messages/>
-       <h:form>
-           Tytuł:
-           <p:selectOneMenu value="#{rent.idBookSelected}" required="true">
-               <f:selectItems value="#{book.bookListFromDb()}" var="book" itemLabel="#{book.title}"
-                              itemValue="#{book.idBook}"/>
-           </p:selectOneMenu>
-           Użytkownik:
-           <p:selectOneMenu value="#{rent.idReaderSelected}" required="true">
-               <f:selectItems value="#{reader.readerListFromDb()}" var="reader" itemLabel="#{reader.surnameReader}"
-                              itemValue="#{reader.idReader}"/>
-           </p:selectOneMenu>
+            <h:messages/>
+            <h:form>
+                Tytuł:
+                <p:selectOneMenu value="#{rent.idBookSelected}" required="true">
+                    <f:selectItems value="#{book.bookListFromDb()}" var="book" itemLabel="#{book.title}"
+                                   itemValue="#{book.idBook}"/>
+                </p:selectOneMenu>
+                Użytkownik:
+                <p:selectOneMenu value="#{rent.idReaderSelected}" required="true">
+                    <f:selectItems value="#{reader.readerListFromDb()}" var="reader" itemLabel="#{reader.surnameReader}"
+                                   itemValue="#{reader.idReader}"/>
+                </p:selectOneMenu>
 
-           Start: <p:inputText id="start" value="#{rent.dateStart}" required="true"/>
-           End: <p:inputText id="end" value="#{rent.dateEnd}" required="true"/>
+                Start: <p:inputText id="start" value="#{rent.dateStart}" required="true"/>
+                End: <p:inputText id="end" value="#{rent.dateEnd}" required="true"/>
 
-           <p:commandButton value="Rent" type="submit" action="#{rent.addNewRent}"/>
-       </h:form>
+                <p:commandButton value="Rent" type="submit" action="#{rent.addNewRent}"/>
+            </h:form>
 
-      <br></br>
-       <h3> History of Rents: </h3>
-      <h:form id="RentBeanForm">
-         <p:dataTable id="rentBeanTable" value="#{rent.rentListFromDb()}" var="rentItem" widgetVar="carsTable"
+            <br></br>
+            <h3> History of Rents: </h3>
+            <h:form id="RentBeanForm">
+                <p:dataTable id="rentBeanTable" value="#{rent.rentListFromDb()}" var="rentItem" widgetVar="carsTable"
 
-                      styleClass="table table-striped table-bordered tableUpdated">
-             <f:facet name="header">
-                 <p:outputPanel>
-                     <h:outputText value="Search all fields:" />
-                     <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
-                 </p:outputPanel>
-             </f:facet>
+                             styleClass="table table-striped table-bordered tableUpdated">
+                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Search all fields:"/>
+                            <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px"
+                                         placeholder="Enter keyword"/>
+                        </p:outputPanel>
+                    </f:facet>
 
-            <p:column filterBy="#{rentItem.idRent }">
-               <f:facet name="header">ID</f:facet>
-               <h:outputText value="#{rentItem.idRent }"/>
-            </p:column>Pan
-            <p:column filterBy="#{rentItem.idBookLibrary.title }">
-               <f:facet name="header">Book</f:facet>
-               <h:outputText value="#{rentItem.idBookLibrary.title } "/>
+                    <p:column filterBy="#{rentItem.idRent }">
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{rentItem.idRent }"/>
+                    </p:column>Pan
+                    <p:column filterBy="#{rentItem.idBookLibrary.title }">
+                        <f:facet name="header">Book</f:facet>
+                        <h:outputText value="#{rentItem.idBookLibrary.title } "/>
+                    </p:column>
+                    <p:column filterBy="#{rentItem.idReader.surnameReader}#{rentItem.idReader.nameReader }">
+                        <f:facet name="header">Reader</f:facet>
+                        <h:outputText value="#{rentItem.idReader.nameReader } #{rentItem.idReader.surnameReader }"/>
+                    </p:column>
+                    <p:column filterBy="#{rentItem.dateStart }">
+                        <f:facet name="header">Start</f:facet>
+                        <h:outputText value="#{rentItem.dateStart }"/>
+                    </p:column>
+                    <p:column filterBy="#{rentItem.dateEnd }">
+                        <f:facet name="header">End</f:facet>
+                        <h:outputText value="#{rentItem.dateEnd }"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{rent.deleteRentById(rentItem.idRent)}" value="Delete"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
 
-            </p:column>
-            <p:column filterBy="#{rentItem.idReader.surnameReader}#{rentItem.idReader.nameReader }">
-               <f:facet name="header">Reader</f:facet>
-               <h:outputText value="#{rentItem.idReader.nameReader } #{rentItem.idReader.surnameReader }"  />
+            <br></br>
+            <div class="grid-item"><h3> Books: </h3></div>
+            <h:form id="bookBeanForm">
+                <p:dataTable id="bookBeanTable" value="#{book.bookListFromDb()}" var="bookBean"
+                             styleClass="table table-striped table-bordered tableUpdated">
 
-            </p:column>
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{bookBean.idBook }"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Author</f:facet>
+                        <h:outputText value="#{bookBean.idAuthor.nameAuthor }  #{bookBean.idAuthor.surnameAuthor } "/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Title</f:facet>
+                        <h:outputText value="#{bookBean.title }"/>
+                    </p:column>
 
-            <p:column filterBy="#{rentItem.dateStart }">
-               <f:facet name="header">Start</f:facet>
-               <h:outputText value="#{rentItem.dateStart }"/>
-            </p:column>
-            <p:column filterBy="#{rentItem.dateEnd }">
-               <f:facet name="header">End</f:facet>
-               <h:outputText value="#{rentItem.dateEnd }"/>
-            </p:column>
-             <p:column>
-                 <f:facet name="header">Delete</f:facet>
-                 <h:commandButton action="#{rent.deleteRentById(rentItem.idRent)}" value="Delete"/>
-             </p:column>
+                    <p:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{book.deleteBookById(bookBean.idBook)}" value="Delete"/>
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton action="newBook.xhtml?faces-redirect=true" value="Add New Book"
+                                 styleClass="btn btn-success btnSpace"/>
+            </h:form>
 
-         </p:dataTable>
+            <br></br>
+            <div class="grid-item"><h3>Authors: </h3></div>
+            <h:form id="authorBeanForm">
+                <p:dataTable id="authorBeanTable" value="#{author.authorListFromDb()}" var="authorItem"
+                             styleClass="table table-striped table-bordered tableUpdated">
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{authorItem.idAuthor }"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{authorItem.nameAuthor } "/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Surname</f:facet>
+                        <h:outputText value="#{authorItem.surnameAuthor }"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:commandButton action="#{author.deleteAuthorById(authorItem.idAuthor)}" value="Delete"/>
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton action="newAuthor.xhtml?faces-redirect=true" value="Add New Author"
+                                 styleClass="btn btn-success btnSpace"/>
+            </h:form>
 
-      </h:form>
+            <br></br>
+            <div class="grid-item"><h3>Readers: </h3></div>
 
-
-
-
-      <br></br>
-      <div class="grid-item"><h3> Books: </h3></div>
-
-      <h:form id="bookBeanForm">
-         <p:dataTable id="bookBeanTable" value="#{book.bookListFromDb()}" var="bookBean"
-                      styleClass="table table-striped table-bordered tableUpdated">
-
-            <p:column>
-               <f:facet name="header">ID</f:facet>
-               <h:outputText value="#{bookBean.idBook }"/>
-            </p:column>
-            <p:column>
-               <f:facet name="header">Author</f:facet>
-               <h:outputText value="#{bookBean.idAuthor.nameAuthor }  #{bookBean.idAuthor.surnameAuthor } "/>
-
-            </p:column>
-            <p:column>
-               <f:facet name="header">Title</f:facet>
-               <h:outputText value="#{bookBean.title }"/>
-            </p:column>
-
-            <p:column>
-               <f:facet name="header">Delete</f:facet>
-               <h:commandButton action="#{book.deleteBookById(bookBean.idBook)}" value="Delete"/>
-            </p:column>
-         </p:dataTable>
-         <p:commandButton action="newBook.xhtml?faces-redirect=true" value="Add New Book"
-                          styleClass="btn btn-success btnSpace"/>
-      </h:form>
-
-
-      <br></br>
-      <div class="grid-item"><h3>Authors: </h3></div>
-
-      <h:form id="authorBeanForm">
-         <p:dataTable id="authorBeanTable" value="#{author.authorListFromDb()}" var="authorItem"
-                      styleClass="table table-striped table-bordered tableUpdated">
-
-            <p:column>
-               <f:facet name="header">ID</f:facet>
-               <h:outputText value="#{authorItem.idAuthor }"/>
-            </p:column>
-            <p:column>
-               <f:facet name="header">Name</f:facet>
-               <h:outputText value="#{authorItem.nameAuthor } "/>
-
-            </p:column>
-            <p:column>
-               <f:facet name="header">Surname</f:facet>
-               <h:outputText value="#{authorItem.surnameAuthor }"/>
-            </p:column>
-            <p:column>
-               <f:facet name="header">Delete</f:facet>
-               <h:commandButton action="#{author.deleteAuthorById(authorItem.idAuthor)}" value="Delete"/>
-            </p:column>
-         </p:dataTable>
-         <p:commandButton action="newAuthor.xhtml?faces-redirect=true" value="Add New Author"
-                          styleClass="btn btn-success btnSpace"/>
-
-      </h:form>
-
-
-      <br></br>
-       <div class="grid-item"><h3>Readers: </h3></div>
-
-      <h:form id="readerBeanForm">
-         <p:dataTable id="readerBeanTable" value="#{reader.readerListFromDb()}" var="readerItem"
-                      styleClass="table table-striped table-bordered tableUpdated">
-
-            <p:column>
-               <f:facet name="header">ID</f:facet>
-               <h:outputText value="#{readerItem.idReader }"/>
-            </p:column>
-            <p:column>
-               <f:facet name="header">Name</f:facet>
-               <h:outputText value="#{readerItem.nameReader } "/>
-
-            </p:column>
-            <p:column>
-               <f:facet name="header">Surname</f:facet>
-               <h:outputText value="#{readerItem.surnameReader }"/>
-            </p:column>
-
-
-         </p:dataTable>
-
-      </h:form>
-
-
-       </h:panelGrid>
-   </div>
+            <h:form id="readerBeanForm">
+                <p:dataTable id="readerBeanTable" value="#{reader.readerListFromDb()}" var="readerItem"
+                             styleClass="table table-striped table-bordered tableUpdated">
+                    <p:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{readerItem.idReader }"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{readerItem.nameReader } "/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Surname</f:facet>
+                        <h:outputText value="#{readerItem.surnameReader }"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </h:panelGrid>
+    </div>
 </h:body>
-
-
 </html>
 
 
